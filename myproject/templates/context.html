@@ -1,0 +1,73 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'style2.css' %}" />
+    <title>Weather Cards</title>
+  </head>
+  <body>
+    <div class="container-context">
+      {% if messages %} {% for message in messages %}
+      <div class="alert alert-warning alert-dismissable" role="alert">
+        <button class="close" data-dismiss="alert">
+          <small> <sup>x</sup> </small>
+        </button>
+        {{ message }}
+      </div>
+      <br />
+      {% endfor %} {% endif %}
+
+      <h1 class="main-heading">Weather Cards</h1>
+      <form
+        action="{% url 'context' %}"
+        method="POST"
+        class="form-inline my-2 my-lg-0"
+      >
+        {% csrf_token %}
+        <input
+          class="form-control mr-sm-2"
+          type="search"
+          placeholder="Enter the name of city"
+          aria-label="Search"
+          name="ticker"
+        />
+        <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">
+          Add City
+        </button>
+      </form>
+      <div class="main_cont">
+        {% if ticker %} {% for list_item in output %}
+        <div class="card-container">
+          <h1 class="h1_heading">{{list_item.name}}</h1>
+          <div class="cards">
+            <div class="main_points">
+              Temperature: {{list_item.main.temp}}K</br>
+              Pressure: {{list_item.main.pressure}}hPa</br>
+              Humidity: {{list_item.main.humidity}}</br>
+              Wind Speed: {{list_item.wind.speed}} m/s</h4>
+            </div>
+            <div class="small_container">
+                <div class="icon">
+                  <img
+                    src="https://openweathermap.org/img/w/{{list_item.weather.0.icon}}.png"
+                    alt="icon" class="imgl"
+                  />
+                </div>
+                <div class="small_descriptions">
+                  Description: {{list_item.weather.0.main}}</br>
+                  Clouds: {{list_item.clouds.all}}</br>
+                  Sunrise: {{list_item.sunrise_time}}</br>
+                  Sunset: {{list_item.sunset_time}}</br>
+                </div>
+              </div>
+          </div>
+        </div>
+
+        {% endfor %} {% endif %}
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,92 @@
+/* CSS code for styling weather cards */
+
+@import url('https://fonts.googleapis.com/css2?family=Otomanopee+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bellota+Text:wght@300;400;700&family=Lumanosimo&family=Monoton&display=swap');
+body {
+    background-image: radial-gradient(circle at 52% 94%, rgba(169, 169, 169, 0.04) 0%, rgba(169, 169, 169, 0.04) 50%, rgba(199, 199, 199, 0.04) 50%, rgba(199, 199, 199, 0.04) 100%), radial-gradient(circle at 96% 98%, rgba(61, 61, 61, 0.04) 0%, rgba(61, 61, 61, 0.04) 50%, rgba(201, 201, 201, 0.04) 50%, rgba(201, 201, 201, 0.04) 100%), radial-gradient(circle at 93% 97%, rgba(227, 227, 227, 0.04) 0%, rgba(227, 227, 227, 0.04) 50%, rgba(145, 145, 145, 0.04) 50%, rgba(145, 145, 145, 0.04) 100%), radial-gradient(circle at 79% 52%, rgba(245, 245, 245, 0.04) 0%, rgba(245, 245, 245, 0.04) 50%, rgba(86, 86, 86, 0.04) 50%, rgba(86, 86, 86, 0.04) 100%), linear-gradient(90deg, rgb(210, 9, 198), rgb(25, 38, 118));
+}
+
+body {
+    font-family: 'Lumanosimo', 'Otomanopee One', sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+}
+
+.container-context {
+    align-items: center;
+    padding: 20px 20px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    display: block;
+}
+
+.alert {
+    width: 100%;
+}
+
+.main-heading {
+    text-align: center;
+    font-size: 35px;
+    font-weight: 900;
+}
+
+.form-inline {
+    margin: 20px 0;
+}
+
+.main_cont {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card-container {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    padding: 20px;
+    background-color: aqua;
+}
+
+.h1_heading {
+    font-size: 35px;
+    font-weight: 700;
+}
+
+.cards {
+    background-color: rgb(141, 233, 233);
+    display: flex;
+    justify-content: center;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.small-container {
+    background-color: rgb(182, 143, 86);
+}
+
+.icon {
+    background-color: rgb(232, 123, 241);
+    text-align: center;
+    padding: 0.5rem 0.1rem;
+}
+
+.small_descriptions {
+    padding: 1rem 1rem;
+    background-color: rgb(238, 143, 143);
+    font-size: 7px;
+    font-weight: 200;
+    text-align: center;
+}
+
+.main_points {
+    background-color: rgb(141, 233, 233);
+    font-size: 14px;
+    font-weight: 400;
+    padding: 1rem 1rem;
+    text-align: center;
+    height: 60px;
+}

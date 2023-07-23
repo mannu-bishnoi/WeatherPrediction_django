@@ -9,27 +9,45 @@
     <title>Weather</title>
 </head>
 <body>
-  <div class="container">
-    <form action="" method="POST">
-      {% csrf_token %}
-      <input type="text" name="city" placeholder="Enter City" />
-      <button type="submit" class="btn">Enter</button>
-    </form>
-    <div class="weather">
-      <div class="left">
+  <div class="main_container">
+    <section class="container_1">
+      <h4 class ="cap_4">  Welcome to our Weather Page!</h4>
+
+      <p class ="p_tag">With our Weather Page, you can easily check the current weather conditions of any city in the world. Simply enter the name of the city you want to know about in the search bar and click on the "Add City" button.</p>
+      <p class="p_tag">Once you submit the city name, our Weather Page will fetch real-time weather data using the OpenWeatherMap API. You will receive a set of weather cards displaying essential information about the city's weather. Each weather card includes the city's name, a weather icon representing the current conditions, temperature, pressure, humidity, wind speed, and other relevant details.</p>
+    </section>
+    <div class="container">
+    
+      <form action="" method="POST">
+        {% csrf_token %}
+        <input type="text" name="city" placeholder="Enter City" />
+        <button type="submit" class="btn">Enter</button>
+      </form>
+      <div class="weather">
+        <div class="left">
         <h2>{{temp}} &deg;</h2>
         <h3>{{city}}</h3>
-      </div>
-      <div class="right">
-        <div class="icon">
-          <p><img src="https://openweathermap.org/img/w/{{data.icon}}.png" alt="icon" ></p>
         </div>
-        <div class="condition">
+        <div class="right">
+          <div class="icon">
+          <p><img src="https://openweathermap.org/img/w/{{data.icon}}.png" alt="icon" ></p>
+          </div>
+          <div class="condition">
           <p>{{data.te}}</p>
           <p>{{data.desp}}</p>
+          </div>
         </div>
       </div>
+    
     </div>
-  </div>
+    <section class="container_3">
+      <p class="p_tag">Stay informed and plan your day effectively by accessing accurate and up-to-date weather information on our Weather Page. Whether you're traveling, going for a walk, or planning outdoor activities, our Weather Page will help you make informed decisions based on the current weather conditions of your chosen city.
+      <br>
+      Experience the convenience of checking the weather from the comfort of your own device. Start exploring the weather in your favorite cities with our Weather Page now!</p>
+      <h4 class="heading_4">
+      View added cards<a class="link" href="{% url 'context' %}">Weather Updates</a>
+      </h4>
+    </section>
+</div>
 </body>
 </html>
